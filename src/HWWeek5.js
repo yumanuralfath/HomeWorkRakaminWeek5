@@ -12,4 +12,6 @@
 // - Push ke REPO dan upload link REPO, tolong repo dalam status public
 // - Gunakan framework CSS untuk membuat tampilan lebih menarik
 
-
+window.addEventListener("load", (event) => {
+  console.log("page is fully loaded");
+});

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dim">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +7,89 @@
     <title>HomeWork Rakamin 5</title>
   </head>
   <body>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+    <div class="container mx-auto p-10">
+      <div class="flex flex-wrap">
+        <!-- Tab Registrasi Form Start -->
+        <div class="w-full lg:w-1/2">
+          <div class="card shadow-2xl bg-base-100">
+            <form class="card-body">
+              <h1 class="text-center font-bold text-2xl">REGISTER</h1>
+              <label class="label">
+                <span class="label-text">Nama</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Nama Minimal 10 Karakter"
+                class="input input-bordered mb-4"
+                required
+              />
+              <label class="label">
+                <span class="label-text">Umur</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Minimal 25 Tahun"
+                class="input input-bordered mb-4"
+                required
+              />
+              <label class="label">
+                <span class="label-text">Uang Sangu</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Minimal 100K"
+                class="input input-bordered mb-4"
+                required
+              />
+              <button class="btn btn-primary w-full">Register</button>
+            </form>
+          </div>
+        </div>
+        <!-- Tab Registrasi From End -->
+
+        <!-- Hero Section for Login -->
+        <div class="w-full lg:w-1/2 mt-4 lg:mt-0">
+          <h1 class="text-3xl font-bold mb-4 text-center">List Pendaftar</h1>
+          <div class="overflow-x-auto">
+            <table class="table">
+              <!-- head -->
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Name</th>
+                  <th>Job</th>
+                  <th>Favorite Color</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- row 1 -->
+                <tr class="bg-base-200">
+                  <th>1</th>
+                  <td>Cy Ganderton</td>
+                  <td>Quality Control Specialist</td>
+                  <td>Blue</td>
+                </tr>
+                <!-- row 2 -->
+                <tr>
+                  <th>2</th>
+                  <td>Hart Hagerty</td>
+                  <td>Desktop Support Technician</td>
+                  <td>Purple</td>
+                </tr>
+                <!-- row 3 -->
+                <tr>
+                  <th>3</th>
+                  <td>Brice Swyre</td>
+                  <td>Tax Accountant</td>
+                  <td>Red</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Hero Section End -->
+      </div>
+    </div>
   </body>
+  <script src="./HWWeek5.js"></script>
 </html>
