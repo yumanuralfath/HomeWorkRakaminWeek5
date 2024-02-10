@@ -10,6 +10,9 @@ class FormRegister {
     this.registerButton = document.getElementById("registerButton");
     this.errorContainer = document.getElementById("errorContainer");
     this.listPendaftar = document.getElementById("listPendaftar");
+    this.tbodyPendaftar = document.getElementById("tbodyPendaftar");
+    this.avgUangSangu = document.getElementById("avgUangSangu");
+    this.avgUmur = document.getElementById("avgUmur");
     this.registerButton.addEventListener("click", this.register.bind(this));
   }
 
@@ -23,7 +26,7 @@ class FormRegister {
     // Clear any previous error messages
     this.errorContainer.innerHTML = "";
 
-    // Lakukan validasi di sini
+    // Validate Form Field
     let errorMessage = "";
     if (nama.length < 10) {
       errorMessage += "Nama harus memiliki minimal 10 karakter.<br>";
@@ -53,7 +56,25 @@ class FormRegister {
                     <button class="btn btn-sm btn-danger" onclick="deleteRow(this)">Delete</button>
                 </td>
             `;
-    tbody.appendChild(newRow);
+    this.tbodyPendaftar.appendChild(newRow);
+
+    //Calculate Avg Sangu
+    const totalUangSangu = Array.from(
+      this.tbodyPendaftar.querySelectorAll("td:nth-child(4)")
+    )
+      .map((td) => parseInt(td.textContent))
+      .reduce((acc, curr) => acc + curr, 0);
+    const totalUmur = Array.from(
+      this.tbodyPendaftar.querySelectorAll("td:nth-child(3)")
+    )
+      .map((td) => parseInt(td.textContent))
+      .reduce((acc, curr) => acc + curr, 0);
+    const avgUangSangu = totalUangSangu / this.tbodyPendaftar.childElementCount;
+    const avgUmur = totalUmur / this.tbodyPendaftar.childElementCount;
+
+    // Update Resumem Value
+    this.avgUangSangu.textContent = avgUangSangu.toFixed(2);
+    this.avgUmur.textContent = avgUmur.toFixed(2);
 
     // Clear form after successful registration
     this.namaInput.value = "";
