@@ -12,8 +12,10 @@
         <!-- Tab Registrasi Form Start -->
         <div class="w-full lg:w-1/2">
           <div class="card shadow-2xl bg-base-100">
-            <form class="card-body">
+            <form class="card-body" id="formRegister">
               <h1 class="text-center font-bold text-2xl">REGISTER</h1>
+              <div id="errorContainer" class="text-red-600 mb-4"></div>
+              <!-- Container for error messages -->
               <label class="label">
                 <span class="label-text">Nama</span>
               </label>
@@ -21,70 +23,63 @@
                 type="text"
                 placeholder="Nama Minimal 10 Karakter"
                 class="input input-bordered mb-4"
+                id="namaInput"
                 required
               />
               <label class="label">
                 <span class="label-text">Umur</span>
               </label>
               <input
-                type="text"
+                type="number"
                 placeholder="Minimal 25 Tahun"
                 class="input input-bordered mb-4"
+                id="umurInput"
                 required
               />
               <label class="label">
                 <span class="label-text">Uang Sangu</span>
               </label>
               <input
-                type="text"
+                type="number"
                 placeholder="Minimal 100K"
                 class="input input-bordered mb-4"
+                id="uangSanguInput"
                 required
               />
-              <button class="btn btn-primary w-full">Register</button>
+              <button class="btn btn-primary w-full" id="registerButton">
+                Register
+              </button>
             </form>
           </div>
         </div>
         <!-- Tab Registrasi From End -->
 
         <!-- Hero Section for Login -->
+
         <div class="w-full lg:w-1/2 mt-4 lg:mt-0">
-          <h1 class="text-3xl font-bold mb-4 text-center">List Pendaftar</h1>
-          <div class="overflow-x-auto">
-            <table class="table">
-              <!-- head -->
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>Name</th>
-                  <th>Job</th>
-                  <th>Favorite Color</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- row 1 -->
-                <tr class="bg-base-200">
-                  <th>1</th>
-                  <td>Cy Ganderton</td>
-                  <td>Quality Control Specialist</td>
-                  <td>Blue</td>
-                </tr>
-                <!-- row 2 -->
-                <tr>
-                  <th>2</th>
-                  <td>Hart Hagerty</td>
-                  <td>Desktop Support Technician</td>
-                  <td>Purple</td>
-                </tr>
-                <!-- row 3 -->
-                <tr>
-                  <th>3</th>
-                  <td>Brice Swyre</td>
-                  <td>Tax Accountant</td>
-                  <td>Red</td>
-                </tr>
-              </tbody>
-            </table>
+          <!-- Button List Pendaftar -->
+          <div class="w-1/2 text-center mx-auto">
+            <button id="btnList" class="btn btn-outline btn-info">
+              Show List
+            </button>
+          </div>
+          <div id="listPendaftar" style="display: none">
+            <h1 class="text-3xl font-bold mb-4 text-center">List Pendaftar</h1>
+            <div class="overflow-x-auto">
+              <table class="table">
+                <!-- head -->
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Nama</th>
+                    <th>Umur</th>
+                    <th>Uang Sangu</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
           </div>
         </div>
         <!-- Hero Section End -->
